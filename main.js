@@ -1,9 +1,18 @@
- const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const menuLinks = document.querySelectorAll('.menu a');
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('ativo');
-    });
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('ativo');
+});
+
+// Fecha o menu ao clicar em qualquer link
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('ativo');
+  });
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const lightbox = document.getElementById('lightbox');
@@ -40,7 +49,7 @@ function inicio(){
 }
 
   function produtos(){
-  var sobreProdutos = document.querySelector('#CATÁLOGO');
+  var sobreProdutos = document.querySelector('#catalogo');
   sobreProdutos.scrollIntoView({behavior: 'smooth'})
 }
 
@@ -53,3 +62,4 @@ function faleConosco(){
   var sobreFooter = document.querySelector('#contato');
   sobreFooter.scrollIntoView({behavior: 'smooth'});
 }
+
