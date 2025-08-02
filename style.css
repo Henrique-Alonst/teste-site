@@ -23,13 +23,6 @@ html, body {
   overflow-x: hidden;
 }
 
-
-* {
-  border: 1px solid red; /* depois você remove */
-}
-
-
-
 .cormorant-garamond{
   font-family: "Cormorant Garamond", serif;
   font-optical-sizing: auto;
@@ -49,7 +42,6 @@ header.topo {
   position: relative; /* Permite que o nav absolute funcione dentro */
   z-index: 1000;
 }
-
 
 .topo {
   top: 0;
@@ -79,12 +71,10 @@ header.topo {
   display: none;
 }
 
-
-
 /* NAV DESKTOP */
 
 .menu {
-  max-width: 600px; /* limite máximo que o menu pode ocupar */
+  max-width: 1024px; /* limite máximo que o menu pode ocupar */
   overflow: hidden; /* esconde qualquer coisa que ultrapasse */
   white-space: nowrap; /* impede quebra de linha */
 }
@@ -331,10 +321,6 @@ img{
   font-size: 14px;
 }
 
-
-
- 
-
 .sobre-nos-container {
   display: flex;
   align-items: center;
@@ -450,9 +436,12 @@ form button:hover {
   background-color: #b8a26e;
 }
 
+
 .redes-sociais a {
   color: #fff;
   text-decoration: none;
+  margin-bottom: 100px;
+  
 }
 
 .redes-sociais a:hover {
@@ -545,16 +534,16 @@ form button:hover {
 
 /* RESPONSIVO */
 
+
+
 @media (max-width: 768px) {
   
 .menu {
   position: absolute;
   top: 100%;
-  left: 0;
   right: 0;
   width: 100vw; /* usa toda a largura da tela real */
   background-color: #d4be91;
-
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.4s ease;
@@ -562,6 +551,7 @@ form button:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 0; /* garante que não há espaços extras */
   margin: 0;
+ 
 }
 
 
@@ -681,9 +671,88 @@ form button:hover {
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
- .menu{
-  background-color: red;
+ .menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100vw; /* usa toda a largura da tela real */
+  background-color: #d4be91;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0; /* garante que não há espaços extras */
+  margin: 0;
+  background-color: aqua;
+ 
+}
+
+
+
+  .menu.ativo {
+    max-height: 300px; /* ajustável conforme número de links */
+  }
+
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    
+  }
+
+  .menu a {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 14px 0;
+    color: #202020;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .menu a:hover {
+    color: #ffffff;
+    
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+ 
+ .logo{
+  margin-left: 0;
+  width: 170px;
  }
+
+ 
+  .hero-content h1 {
+    font-size: 3.1em;
+    white-space: normal;
+    border-right: none;
+    animation: none;
+    
+  }
+
+  .hero-content h3 {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+
+  .hero h3 {
+    font-size: 1.1rem;
+  }
+  
+
+
 
   
 
@@ -694,6 +763,23 @@ form button:hover {
     width: 100%;
   }
 }
+
+/* ==== Laptops e desktops pequenos: 1025px até 1440px ==== */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .menu{
+    padding-left: 150px;
+  }
+
+  .logo{
+    margin-left:0;
+  }
+
+  #catalogo{
+    width: 100%;
+  }
+  
+}
+
 
 
 

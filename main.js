@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-function inicio(){
+
+  function inicio(){
   var sobreInicio = document.querySelector('#hero');
   sobreInicio.scrollIntoView({behavior: 'smooth'})
 }
